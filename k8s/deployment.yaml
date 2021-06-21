@@ -1,5 +1,5 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
 metadata:
   name: devops-toolkit
   labels:
@@ -33,4 +33,8 @@ spec:
           requests:
             cpu: 80m
             memory: 128Mi
-
+  strategy:
+    canary:                        # Changed from rollingUpdate or recreate
+      steps:
+      - setWeight: 20
+      - pause: {}
