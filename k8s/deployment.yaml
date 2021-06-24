@@ -34,7 +34,15 @@ spec:
             cpu: 80m
             memory: 128Mi
   strategy:
-    canary:                        # Changed from rollingUpdate or recreate
+    canary:
       steps:
       - setWeight: 20
       - pause: {}
+      - setWeight: 40
+      - pause: {}
+      - setWeight: 60
+      - pause: {duration: 10}
+      - setWeight: 80
+      - pause: {duration: 10}
+  analysis:
+    enabled: false
