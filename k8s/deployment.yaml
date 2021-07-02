@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: devops-toolkit
-        image: vfarcic/devops-toolkit-series:3.0.0
+        image: vfarcic/devops-toolkit-series:2.9.9
         ports:
         - containerPort: 80
         livenessProbe:
@@ -39,15 +39,10 @@ spec:
       maxSurge: "25%"
       maxUnavailable: 0
       steps:
-      - setWeight: 0
-      - pause: {duration: 60}
-      - setWeight: 20
+      - setWeight: 1
+      - pause: {}
       - pause: {duration: 10}
-      - setWeight: 40
       - pause: {duration: 10}
-      - setWeight: 60
       - pause: {duration: 10}
-      - setWeight: 80
       - pause: {duration: 10}
-      - setWeight: 100
       - pause: {duration: 10}
