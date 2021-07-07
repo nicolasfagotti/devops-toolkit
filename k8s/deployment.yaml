@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: devops-toolkit
-        image: vfarcic/devops-toolkit-series:2.9.10
+        image: vfarcic/devops-toolkit-series:2.9.11
         ports:
         - containerPort: 80
         livenessProbe:
@@ -37,15 +37,9 @@ spec:
   strategy:
     canary:
       steps:
-      - setWeight: 20
+      - setWeight: 1
       - pause:
-          duration: 30
-      - setWeight: 40
+          duration: 120
+      - setWeight: 50
       - pause:
-          duration: 30
-      - setWeight: 60
-      - pause:
-          duration: 30
-      - setWeight: 80
-      - pause:
-          duration: 30
+          duration: 120
