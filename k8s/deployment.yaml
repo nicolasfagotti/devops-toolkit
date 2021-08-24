@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: devops-toolkit
-        image: vfarcic/devops-toolkit-series:2.9.9
+        image: vfarcic/devops-toolkit-series:2.9.10
         ports:
         - containerPort: 80
         livenessProbe:
@@ -36,10 +36,10 @@ spec:
             memory: 128Mi
   strategy:
     canary:
-#      analysis:
-#        templates:
-#        - templateName: success-rate
-#        startingStep: 2 # delay starting analysis run until setWeight: 40%
+      analysis:
+        templates:
+        - templateName: success-rate
+        startingStep: 2 # delay starting analysis run until setWeight: 40%
 #        args:
 #        - name: service-name
 #          value: guestbook-svc.default.svc.cluster.local
