@@ -4,6 +4,8 @@ metadata:
   name: devops-toolkit
   labels:
     app: devops-toolkit
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
 spec:
   selector:
     matchLabels:
