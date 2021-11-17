@@ -4,6 +4,8 @@ metadata:
   name: devops-toolkit
   labels:
     app: devops-toolkit
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
 spec:
   selector:
     matchLabels:
