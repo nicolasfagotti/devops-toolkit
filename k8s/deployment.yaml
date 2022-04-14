@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: devops-toolkit
-        image: vfarcic/devops-toolkit-series:2.9.8
+        image: vfarcic/devops-toolkit-series:2.9.9
         ports:
         - containerPort: 80
         livenessProbe:
@@ -36,13 +36,13 @@ spec:
             memory: 128Mi
   strategy:
     canary:
-      analysis:
-        templates:
-        - templateName: success-rate
-        startingStep: 1 # delay starting analysis run until setWeight: 40%
-        args:
-        - name: service-name
-          value: "emailsendingds"
+#      analysis:
+#        templates:
+#        - templateName: success-rate
+#        startingStep: 1 # delay starting analysis run until setWeight: 40%
+#        args:
+#        - name: service-name
+#          value: "emailsendingds"
       steps:
       - setWeight: 1
       - pause:
