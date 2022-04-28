@@ -10,10 +10,10 @@ metadata:
     notifications.argoproj.io/subscribe.on-analysis-run-running.slack: argo-notifications-testing
     notifications.argoproj.io/subscribe.on-rollout-aborted.slack: argo-notifications-testing
     notifications.argoproj.io/subscribe.on-rollout-completed.slack: argo-notifications-testing
-    notifications.argoproj.io/subscribe.on-rollout-paused.slack: argo-notifications-testing
+    #notifications.argoproj.io/subscribe.on-rollout-paused.slack: argo-notifications-testing
     notifications.argoproj.io/subscribe.on-rollout-step-completed.slack: argo-notifications-testing
-    notifications.argoproj.io/subscribe.on-rollout-updated.slack: argo-notifications-testing
-    notifications.argoproj.io/subscribe.on-scaling-replica-set.slack: argo-notifications-testing
+    #notifications.argoproj.io/subscribe.on-rollout-updated.slack: argo-notifications-testing
+    #notifications.argoproj.io/subscribe.on-scaling-replica-set.slack: argo-notifications-testing
 spec:
   selector:
     matchLabels:
@@ -26,7 +26,7 @@ spec:
     spec:
       containers:
       - name: devops-toolkit
-        image: vfarcic/devops-toolkit-series:2.9.8
+        image: vfarcic/devops-toolkit-series:2.9.9
         ports:
         - containerPort: 80
         livenessProbe:
