@@ -19,7 +19,7 @@ spec:
   selector:
     matchLabels:
       app: devops-toolkit
-  replicas: 10
+  replicas: 4
   template:
     metadata:
       labels:
