@@ -27,7 +27,7 @@ spec:
     spec:
       containers:
       - name: devops-toolkit
-        image: vfarcic/devops-toolkit-series:2.9.10
+        image: vfarcic/devops-toolkit-series:2.9.9
         ports:
         - containerPort: 80
         livenessProbe:
@@ -59,11 +59,9 @@ spec:
       - pause:
           duration: 20
       - setWeight: 25
-      - pause:
-          duration: 20
+      - pause: {}
       - setWeight: 50
       - pause:
           duration: 20
       - setWeight: 75
-      - pause:
-          duration: 20
+      - pause: {}
