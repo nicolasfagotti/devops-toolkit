@@ -12,7 +12,7 @@ spec:
     failureLimit: 3
     provider:
       prometheus:
-        address: http://prometheus.istio-system.svc.cluster.local:9090
+        address: http://10.42.0.171/
         query: |
           sum(irate(
             istio_requests_total{destination_service_name=~"{{args.service-name}}",response_code!~"5.*"}[5m]
