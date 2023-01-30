@@ -47,13 +47,13 @@ spec:
             memory: 128Mi
   strategy:
     canary:
-#      analysis:
-#        templates:
-#        - templateName: success-rate
-#        startingStep: 1 # delay starting analysis run until setWeight: 40%
-#        args:
-#        - name: service-name
-#          value: "emailsendingds"
+      analysis:
+        templates:
+        - templateName: success-rate
+        startingStep: 1 # delay starting analysis run until setWeight: 40%
+        args:
+        - name: service-name
+          value: "emailsendingds"
       steps:
       - setWeight: 1
       - pause:
